@@ -37,7 +37,34 @@
     </section>
 
     <section id="newsCards" class="my-10 w-11/12 mx-auto">
-
+        <div class="card lg:card-side bg-base-100 shadow-xl my-5">
+            <figure><img src="https://placeimg.com/80/80/people" alt="thumbnailes" class="p-2"></figure>
+            <div class="card-body">
+                <h2 class="card-title">${newsDetails.title}</h2>
+                <p>${newsDetails.details}</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <img class="w-10 rounded-full mx-4" src="https://placeimg.com/80/80/people" />
+                        <div>
+                            <p class="font-semibold">Rahat</p>
+                            <p class="text-slate-600">18, December, 1997</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="images/icons8-eye-30.png" alt="">
+                        <p class="font-bold mx-3">1.2M</p>
+                    </div>
+                    <div class="rating">
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" checked />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                    </div>
+                    <button><img src="images/icons8-right-arrow-48.png" alt=""></button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script src="js/app.js"></script>

@@ -41,11 +41,30 @@ const displayNews = (multipleNewsDetails) => {
             <div class="card-body">
                 <h2 class="card-title">${newsDetails.title}</h2>
                 <p>${newsDetails.details}</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <img class="w-10 rounded-full mx-4" src="${newsDetails.author.img}" />
+                        <div>
+                            <p class="font-semibold">${newsDetails.author.name}</p>
+                            <p class="text-slate-600">${newsDetails.author.published_date}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="images/icons8-eye-30.png" alt="">
+                        <p class="font-bold mx-3">${newsDetails.total_view}</p>
+                    </div>
+                    <div class="rating">
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                        <input type="radio" name="rating-1" class="mask mask-star" checked />
+                        <input type="radio" name="rating-1" class="mask mask-star" />
+                    </div>
+                    <button><img src="images/icons8-right-arrow-48.png" alt=""></button>
+                </div>
             </div>
         </div>
         `
         newsContainer.appendChild(newsCard);
     });
 }
-
-loadNews();
