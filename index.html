@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="retro">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Today</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Welcome to News Today</h1>
+<body class="w-11/12 mx-auto">
+    <header class="my-6 border-b-2">
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-3xl">News <span class=" text-lime-600">Today</span></a>
+            </div>
+            <div>
+                <div class="btn-group mr-5">
+                    <button class="btn btn-active">News</button>
+                    <button class="btn">Blog</button>
+                </div>
+                <div>
+                    <label class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="https://placeimg.com/80/80/people" />
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="category" class="flex justify-center flex-wrap">
+        <button class="btn btn-ghost">Home</button>
+    </section>
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>
