@@ -35,12 +35,19 @@ const displayNews = (multipleNewsDetails) => {
     newsContainer.innerHTML = ``;
     multipleNewsDetails.forEach(newsDetails => {
         const newsCard = document.createElement('div');
+        let slicedTxt;
+        if (newsDetails.details.length >= 500) {
+            slicedTxt = newsDetails.details.slice(0, 500) + '...';
+        }
+        else {
+            slicedTxt = newsDetails.details;
+        }
         newsCard.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl my-5">
             <figure><img src="${newsDetails.thumbnail_url}" alt="thumbnailes" class="p-2"></figure>
             <div class="card-body">
                 <h2 class="card-title">${newsDetails.title}</h2>
-                <p>${newsDetails.details}</p>
+                <p>${slicedTxt}</p>
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <img class="w-10 rounded-full mx-4" src="${newsDetails.author.img}" />
