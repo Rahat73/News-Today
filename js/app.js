@@ -3,16 +3,14 @@ const loadCategory = async () => {
     const response = await fetch(url);
     const data = await response.json();
     displayCategory(data.data.news_category);
-    //console.log(data.data.news_category);
 }
 
 const displayCategory = (categories) => {
     const categoryContainer = document.getElementById('category');
     for (const category in categories) {
-        //console.log(categories[category].category_name);
         const categoryName = document.createElement('button');
         categoryName.classList.add("btn", "btn-ghost");
-        categoryName.setAttribute("onclick", `loadNews('${categories[category].category_id}')`)
+        categoryName.setAttribute("onclick", `loadNews('${categories[category].category_id}', '${categories[category].category_name}')`)
         categoryName.innerHTML = `
             ${categories[category].category_name}
         `
@@ -21,17 +19,19 @@ const displayCategory = (categories) => {
 }
 loadCategory();
 
-const loadNews = async (id) => {
+const loadNews = async (id, name) => {
     toggleLoader(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     const response = await fetch(url);
     const data = await response.json();
     await sleep(2000);
-    displayNews(data.data);
-    console.log(data.data);
+    displayNews(data.data, name);
 }
 
-const displayNews = (multipleNewsDetails) => {
+const displayNews = (multipleNewsDetails, name) => {
+    document.getElementById('newsCount').innerText = multipleNewsDetails.length;
+    document.getElementById('newsCategory').innerText = name;
+    document.getElementById('countSection').classList.remove('hidden');
     const newsContainer = document.getElementById('newsCards');
     newsContainer.innerHTML = ``;
     multipleNewsDetails.forEach(newsDetails => {
