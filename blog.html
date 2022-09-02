@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="retro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Today</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="my-6 border-b-2 w-11/12 mx-auto">
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-3xl">News <span class=" text-lime-600">Today</span></a>
+            </div>
+            <div>
+                <div class="btn-group mr-5">
+                    <a class="btn" href="index.html">News</a>
+                    <a class="btn btn-active" href="blog.html">Blog</a>
+                </div>
+                <div>
+                    <label class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="https://placeimg.com/80/80/people" />
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="w-11/12 mx-auto">
+        <h1 class="font font-bold text-2xl my-5">1. What are the differences between var, let & const?</h1>
+        <div class="overflow-x-auto mb-5">
+            <table class="table w-full">
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>var</th>
+                        <th>let</th>
+                        <th>const</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                        <th>1</th>
+                        <td>The scope of a var variable is functional scope.</td>
+                        <td>The scope of a let variable is block scope.</td>
+                        <td>The scope of a const variable is block scope.</td>
+                    </tr>
+                    <!-- row 2 -->
+                    <tr>
+                        <th>2</th>
+                        <td>It can be updated and re-declared into the scope.</td>
+                        <td>It can be updated but cannot be re-declared into the scope.</td>
+                        <td>It cannot be updated or re-declared into the scope.</td>
+                    </tr>
+                    <!-- row 3 -->
+                    <tr>
+                        <th>3</th>
+                        <td>It can be declared without initialization.</td>
+                        <td>It can be declared without initialization.</td>
+                        <td>It cannot be declared without initialization.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h1 class="font font-bold text-2xl my-3">2. What are the differences between arrow function & regular function?
+        </h1>
+        <ul class="list-disc w-11/12 mx-auto mb-7">
+            <li>Unlike regular functions, arrow functions do not have their own this.</li>
+            <li>Arguments objects are not available in arrow functions, but are available in regular functions.</li>
+            <li>Regular functions created using function declarations or expressions are ‘constructible’ and ‘callable’.
+                Since regular functions are constructible, they can be called using the ‘new’ keyword. However, the
+                arrow functions are only ‘callable’ and not constructible. Thus, we will get a run-time error on trying
+                to construct a non-constructible arrow functions using the new keyword.</li>
+        </ul>
+
+        <h1 class="font font-bold text-2xl my-3 ">3. Why do we use template string?</h1>
+        <div class="mb-10">
+            <p>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
+                insert/interpolate
+                variables and expressions into strings without needing to concatenate like in older versions of
+                JavaScript.
+                It allows us to create strings that are complex and contain dynamic elements. Another great thing that
+                comes
+                with template strings are tags. Tags are functions that take a string and the decomposed parts of the
+                string
+                as parameters and are great for converting strings to different entities.</p>
+            <p>We insert a variable or expression by adding a dollar sign $ and curly braces {} into the string
+                `${variable}`. This is much better than the alternative in old JavaScript</p>
+            <p>Another great feature of template strings is that we can have strings with multiple lines for better code
+                readability. This cannot be done in an easy way with the old style of strings. With the old style of
+                strings, we had to concatenate each line of the string to put long strings in multiple lines</p>
+        </div>
+    </main>
+
+    <footer class="footer footer-center p-10 bg-base-300 text-base-content">
+        <div>
+            <p>Copyright © 2022 - All right reserved by News-Today Ltd</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>
