@@ -68,7 +68,8 @@ const displayNews = (multipleNewsDetails, name) => {
                         <input type="radio" name="rating-1" class="mask mask-star" checked />
                         <input type="radio" name="rating-1" class="mask mask-star" />
                     </div>
-                    <button><img src="images/icons8-right-arrow-48.png" alt=""></button>
+                    <button></button>
+                    <label for="my-modal-3" onclick="loadFullNews('${newsDetails._id}')" class="btn btn-outline modal-button"><img src="images/icons8-right-arrow-48.png" alt=""></label>
                 </div>
             </div>
         </div>
@@ -76,6 +77,22 @@ const displayNews = (multipleNewsDetails, name) => {
         newsContainer.appendChild(newsCard);
     });
     toggleLoader(false);
+}
+
+
+const loadFullNews = async id => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    displayFullNews(data.data);
+}
+
+const displayFullNews = newsData => {
+    console.log(newsData)
+    document.getElementById('newsTitle').innerText = newsData[0].title;
+    document.getElementById('fullNews').innerText = newsData[0].details;
+    document.getElementById('newsAuthor').innerText = newsData[0].author.name;
+    document.getElementById('newsDate').innerText = newsData[0].author.published_date;
 }
 
 
