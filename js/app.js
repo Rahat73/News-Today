@@ -33,6 +33,9 @@ const displayNews = (multipleNewsDetails, name) => {
     document.getElementById('newsCategory').innerText = name;
     document.getElementById('countSection').classList.remove('hidden');
     const newsContainer = document.getElementById('newsCards');
+    multipleNewsDetails.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
     newsContainer.innerHTML = ``;
     multipleNewsDetails.forEach(newsDetails => {
         const newsCard = document.createElement('div');
