@@ -1,13 +1,14 @@
 const loadCategory = async () => {
+    let data;
     try {
         const url = `https://openapi.programming-hero.com/api/news/categories`;
         const response = await fetch(url);
-        const data = await response.json();
-        displayCategory(data.data.news_category);
+        data = await response.json();
     }
     catch {
-        alert("Data couldn't be fetched");
+        alert("Categories couldn't be fetched");
     }
+    displayCategory(data.data.news_category);
 }
 
 const displayCategory = (categories) => {
