@@ -49,6 +49,7 @@ const displayNews = (multipleNewsDetails, name) => {
     document.getElementById('newsCount').innerText = newsItemsLength;
     document.getElementById('newsCategory').innerText = name;
     document.getElementById('countSection').classList.remove('hidden');
+    document.getElementById('selection').classList.remove('hidden');
     const newsContainer = document.getElementById('newsCards');
     multipleNewsDetails.sort((a, b) => {
         return b.total_view - a.total_view;
